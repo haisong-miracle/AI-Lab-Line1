@@ -1,0 +1,54 @@
+Task 07 运行记录（生成于 2026-10-28 17:18）
+
+================ 01_collections.py ================
+单词总数： 66
+不同单词数： 47
+前 5 高频： [('a', 5), ('image', 5), ('an', 3), ('and', 3), ('is', 3)]
+第 10~20 个词： ['image', 'an', 'image', 'is', 'a', 'read', 'only', 'template', 'and', 'a']
+长度 >= 5 的词： ['docker', 'packages', 'application', 'dependencies', 'single', 'image', 'image', 'template', 'container', 'running', 'instance', 'image', 'images', 'built', 'layers', 'every', 'layer', 'cached', 'build', 'rebuilds', 'layers', 'changed', 'image', 'times', 'image', 'keeps', 'environment', 'stable', 'across', 'machines']
+集合运算： {'and': {'python', 'linux', 'docker'}, 'or': {'pandas', 'docker', 'python', 'linux', 'git', 'shell', 'numpy'}, 'only_a': {'git', 'shell'}, 'xor': {'git', 'shell', 'pandas', 'numpy'}}
+
+================ 02_control_flow.py ================
+有效成绩： 4
+缺考人数： 1
+及格率： 1.0
+姓名          分数 等级 
+--------------------
+张伟        92.0 A  
+李静        78.0 C  
+赵敏        65.0 D  
+陈晨        88.0 B  
+sum_until(1000) = 45
+
+================ 03_functions.py ================
+stats: {'count': 3, 'sum': 259, 'mean': 86.33333333333333, 'min': 79, 'max': 92}
+期末成绩
+--------------------
+数量：3
+平均分：86.3
+add_item: ['apple']
+counter: 1 2 3
+bump: 1 TOTAL_CALLS = 1
+
+================ selfcheck.py（15 个检查点）================
+
+[PASS] 01 clean_words 清洗标点
+[PASS] 01 word_freq 词频统计
+[PASS] 01 top_n 排序规则
+[PASS] 01 middle_slice 切片
+[PASS] 01 set_operations 交并差
+[PASS] 01 long_words 推导式
+[PASS] 02 grade_of 边界
+[PASS] 02 summarize 汇总
+[PASS] 02 sum_until while
+[PASS] 02 format_table 对齐表格
+[PASS] 03 stats 变参
+[PASS] 03 build_report 关键字参数
+[PASS] 03 add_item 默认参数陷阱
+[PASS] 03 make_counter 闭包
+[PASS] 03 bump 全局作用域
+
+通过 15/15
+
+================ pycodestyle --max-line-length=79 ================
+(无输出 = 零告警，全部符合 PEP8)
