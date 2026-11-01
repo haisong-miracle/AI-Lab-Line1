@@ -1,0 +1,15 @@
+a.md | 是文件吗: True
+b.md | 是文件吗: True
+empty.md | 是文件吗: True
+fake.md | 是文件吗: False
+
+--- 第 2 步 ---
+6
+55
+
+--- 第 3 步 ---
+打不开，跳过： fake.md
+[{'file': 'a.md', 'lines': 6, 'chars': 55}, {'file': 'b.md', 'lines': 6, 'chars': 74}, {'file': 'empty.md', 'lines': 0, 'chars': 0}]
+
+--- 第 4 步 ---
+已生成 summary.json，共 3 条记录

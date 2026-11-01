@@ -1,0 +1,17 @@
+[
+  {
+    "file": "a.md",
+    "lines": 6,
+    "chars": 55
+  },
+  {
+    "file": "b.md",
+    "lines": 6,
+    "chars": 74
+  },
+  {
+    "file": "empty.md",
+    "lines": 0,
+    "chars": 0
+  }
+]
