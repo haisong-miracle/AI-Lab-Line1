@@ -1,0 +1,3 @@
+# mdcheck 仅使用 Python 标准库（pathlib / re / argparse / urllib），
+# 无第三方依赖。本文件按工程规范保留；
+# 若后续加入依赖，格式为：包名==版本号
