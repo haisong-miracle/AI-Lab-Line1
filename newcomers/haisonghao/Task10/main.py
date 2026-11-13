@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """mdcheck —— Markdown 文档检查工具（主入口）。
 
-当前进度（M2）：新增标题层级解析与统计（headings 模块）。
+当前进度（M3）：新增死链与坏图检测（links 模块）。
 """
 
 import sys
@@ -9,6 +9,7 @@ from pathlib import Path
 
 from mdcheck.scanner import find_markdown_files
 from mdcheck.headings import heading_stats
+from mdcheck.links import check_links
 
 
 def main():
@@ -24,16 +25,25 @@ def main():
         return 2
 
     print(f"扫描目录: {root}")
-    print(f"发现 {len(files)} 份 Markdown 文档:")
+    total_problems = 0
     for f in files:
         rel = f.relative_to(root).as_posix()
-        # 统计标题：{1: 2, 3: 1} → "H1×2、H3×1"
-        stats = heading_stats(f.read_text(encoding="utf-8"))
+        text = f.read_text(encoding="utf-8")
+
+        stats = heading_stats(text)
         stat_str = "、".join(
             f"H{k}×{v}" for k, v in sorted(stats.items())
         ) or "无标题"
+
+        problems = check_links(f, root)
+        total_problems += len(problems)
+
         print(f" - {rel}（标题结构: {stat_str}）")
-    return 0
+        for kind, target, pos in problems:
+            print(f"   [问题] {kind}: {target}（{pos}）")
+
+    print(f"死链/坏图总数: {total_problems}")
+    return 1 if total_problems else 0
 
 
 if __name__ == "__main__":
